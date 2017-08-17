@@ -71,25 +71,25 @@ spec:
       serviceAccountName: fluentd-es
       containers:
       - name: fluentd-es
-        image: kydybets/fluent_es_image:version1
-        
+        image: kydybets/fluent_es_image:v.0.2
+        imagePullPolicy: IfNotPresent
         env:
         - name: FLUENTD_ARGS
           value: --no-supervisor -q
-        - name: AWS_ACCESS_KEY_ID
-          valueFrom:
-            secretKeyRef:
-              name:
-              key:
-        - name: AWS_SECRET_ACCESS_KEY
-          valueFrom:
-            secretKeyRef:
-              name:
-              key:
+        # - name: AWS_ACCESS_KEY_ID
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name:
+        #       key:
+        # - name: AWS_SECRET_ACCESS_KEY
+        #   valueFrom:
+        #     secretKeyRef:
+        #       name:
+        #       key:
         - name: AWS_ELASTICSEARCH_URL
-          value: https://<your elasticsearch endpoint here>
+          value: https://search-dev-soxuj7wvdl75v3l6luvg5xbi5q.us-east-1.es.amazonaws.com
         - name: AWS_REGION
-          value: <your elasticsearch domain region>
+          value: us-east-1
         resources:
           limits:
             memory: 500Mi
