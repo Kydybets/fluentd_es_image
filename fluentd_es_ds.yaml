@@ -87,7 +87,7 @@ spec:
         #       name:
         #       key:
         - name: AWS_ELASTICSEARCH_URL
-          value: https://search-dev-soxuj7wvdl75v3l6luvg5xbi5q.us-east-1.es.amazonaws.com
+          value: -------
         - name: AWS_REGION
           value: us-east-1
         resources:
